@@ -43,6 +43,212 @@
 			"details": "Stop the cart and optionally print a message. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#STOP'>Manual</a>"
 		},
 		{
+			"trigger": "assert",
+			"kind": "function",
+			"contents": "assert(${1:condition},${2:message})",
+			"annotation": "(condition, [message])",
+			"details": "If <code>condition</code> is false, stop the program and print <code>message</code> if it is given. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#ASSERT'>Manual</a>"
+		},
+		{
+			"trigger": "reset",
+			"kind": "function",
+			"contents": "reset()",
+			"details": "Reset the values in RAM from 0x5f00..0x5f7f to their default values. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#RESET'>Manual</a>"
+		},
+		{
+			"trigger": "flip",
+			"kind": "function",
+			"contents": "flip()",
+			"details": "Flip the back buffer to screen and wait for next frame. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#FLIP'>Manual</a>"
+		},
+		{
+			"trigger": "printh",
+			"kind": "function",
+			"contents": "printh(${1:str}, ${2:filename}, ${3:overwrite}, ${4:save_to_desktop})",
+			"annotation": "(str, [filename], [overwrite], [save_to_desktop])",
+			"details": "Print to the host operating system's console for debugging. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PRINTH'>Manual</a>"
+		},
+		{
+			"trigger": "time",
+			"kind": "function",
+			"contents": "time()",
+			"details": "Returns the number of seconds elapsed since the cartridge was run. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#TIME'>Manual</a>"
+		},
+		{
+			"trigger": "stat",
+			"kind": "function",
+			"contents": "stat(${1:x})",
+			"annotation": "(x)",
+			"details": "Get system status. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#STAT'>Manual</a>"
+		},
+		{
+			"trigger": "extcmd",
+			"kind": "function",
+			"contents": "extcmd(\"${1:cmd_str}\")",
+			"annotation": "(cmd_str)",
+			"details": "<a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#EXTCMD'>Manual</a>"
+		},
+
+
+
+		{
+			"trigger": "clip",
+			"kind": "function",
+			"contents": "clip(${1:x}, ${2:y}, ${3:w}, ${4:h}, ${5:previous})",
+			"annotation": "(x, y, w, h, [clip_previous])",
+			"details": "Sets the screen's clipping region in pixels. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#CLIP'>Manual</a>"
+		},
+		{
+			"trigger": "pset",
+			"kind": "function",
+			"contents": "pset(${1:x}, ${2:y}, ${3:col})",
+			"annotation": "(x, y, [col])",
+			"details": "Sets the pixel at <code>x, y</code> to colour index <code>col</code> (0..15). <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PSET'>Manual</a>"
+		},
+		{
+			"trigger": "pget",
+			"kind": "function",
+			"contents": "pget(${1:x}, ${2:y})",
+			"annotation": "(x, y)",
+			"details": "Returns the colour of a pixel at <code>x, y</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PGET'>Manual</a>"
+		},
+		{
+			"trigger": "fget",
+			"kind": "function",
+			"contents": "fget(${1:n}, ${2:f})",
+			"annotation": "(n, [f])",
+			"details": "Get the value <code>val</code> of sprite <code>n</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#FGET'>Manual</a>"
+		},
+		{
+			"trigger": "fset",
+			"kind": "function",
+			"contents": "fset(${1:n}, ${2:f}, ${3:v})",
+			"annotation": "(n, [f], val)",
+			"details": "Set the value <code>val</code> of sprite <code>n</code>'s flag <code>f</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#FSET'>Manual</a>"
+		},
+		{
+			"trigger": "print",
+			"kind": "function",
+			"contents": "print(${1:str}, ${2:x}, ${3:y}, ${4:col})",
+			"annotation": "(str, x, y, [col])",
+			"details": "Print a string <code>str</code> and optionally set the draw colour to <code>col</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PRINT'>Manual</a>"
+		},
+		{
+			"trigger": "print",
+			"kind": "function",
+			"contents": "print(${1:str}, ${2:col})",
+			"annotation": "(str, [col])",
+			"details": "Print a string <code>str</code> and optionally set the draw colour to <code>col</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PRINT'>Manual</a>"
+		},
+		{
+			"trigger": "cursor",
+			"kind": "function",
+			"contents": "cursor(${1:x}, ${2:y}, ${3:col})",
+			"annotation": "(x, y, [col])",
+			"details": "Set the cursor position. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#CURSOR'>Manual</a>"
+		},
+		{
+			"trigger": "color",
+			"kind": "function",
+			"contents": "color(${1:col})",
+			"annotation": "([col])",
+			"details": "Set the current colour to be used by drawing functions. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#COLOR'>Manual</a>"
+		},
+		{
+			"trigger": "cls",
+			"kind": "function",
+			"contents": "cls(${1:col})",
+			"annotation": "([col])",
+			"details": "Clear the screen and reset the clipping rectangle. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#CLS'>Manual</a>"
+		},
+		{
+			"trigger": "camera",
+			"kind": "function",
+			"contents": "camera(${1:x}, ${2:y})",
+			"annotation": "([x, y])",
+			"details": "Set a screen offset of -x, -y for all drawing operations. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#CAMERA'>Manual</a>"
+		},
+		{
+			"trigger": "circ",
+			"kind": "function",
+			"contents": "circ(${1:x}, ${2:y}, ${3:r}, ${4:col})",
+			"annotation": "(x, y, r, [col])",
+			"details": "Draw a circle at <code>x,y</code> with radius <code>r</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#CIRC'>Manual</a>"
+		},
+		{
+			"trigger": "circfill",
+			"kind": "function",
+			"contents": "circfill(${1:x}, ${2:y}, ${3:r}, ${4:col})",
+			"annotation": "(x, y, r, [col])",
+			"details": "Draw a filled circle at <code>x,y</code> with radius <code>r</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#CIRCFILL'>Manual</a>"
+		},
+		{
+			"trigger": "oval",
+			"kind": "function",
+			"contents": "oval(${1:x0}, ${2:y0}, ${3:x1}, ${4:y1}, ${5:col})",
+			"annotation": "(x0, y0, x1, y1, [col])",
+			"details": "Draw an oval that is symmetrical in x and y. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#OVAL'>Manual</a>"
+		},
+		{
+			"trigger": "ovalfill",
+			"kind": "function",
+			"contents": "ovalfill(${1:x0}, ${2:y0}, ${3:x1}, ${4:y1}, ${5:col})",
+			"annotation": "(x0, y0, x1, y1, [col])",
+			"details": "Draw an oval that is symmetrical in x and y. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#OVALFILL'>Manual</a>"
+		},
+		{
+			"trigger": "line",
+			"kind": "function",
+			"contents": "line(${1:x0}, ${2:y0}, ${3:x1}, ${4:y1}, ${5:col})",
+			"annotation": "(x0, y0, [x1, y1, [col]])",
+			"details": "Draw a line from <code>x0, y0</code> to <code>x1, y1</code>. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#LINE'>Manual</a>"
+		},
+		{
+			"trigger": "rect",
+			"kind": "function",
+			"contents": "rect(${1:x0}, ${2:y0}, ${3:x1}, ${4:y1}, ${5:col})",
+			"annotation": "(x0, y0, x1, y1, [col])",
+			"details": "Draw a rectangle. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#RECT'>Manual</a>"
+		},
+		{
+			"trigger": "rectfill",
+			"kind": "function",
+			"contents": "rectfill(${1:x0}, ${2:y0}, ${3:x1}, ${4:y1}, ${5:col})",
+			"annotation": "(x0, y0, x1, y1, [col])",
+			"details": "Draw a filled rectangle. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#RECTFILL'>Manual</a>"
+		},
+		{
+			"trigger": "pal",
+			"kind": "function",
+			"contents": "pal(${1:c0}, ${2:c1}, ${3:p})",
+			"annotation": "(c0, c1, [p])",
+			"details": "Swaps colour <code>c0</code> for <code>c1</code> for one of three palette re-mappings. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PAL'>Manual</a>"
+		},
+		{
+			"trigger": "pal",
+			"kind": "function",
+			"contents": "pal(${1:tbl}, ${2:p})",
+			"annotation": "(tbl, [p])",
+			"details": "Colours are assigned for each <code>tbl</code> entry. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PAL'>Manual</a>"
+		},
+		{
+			"trigger": "palt",
+			"kind": "function",
+			"contents": "palt(${1:c}, ${2:t})",
+			"annotation": "(c, [t])",
+			"details": "Set transparency for colour <code>c</code> to <code>t</code> (boolean). <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#PALT'>Manual</a>"
+		},
+		{
+			"trigger": "fillp",
+			"kind": "function",
+			"contents": "fillp(${1:p})",
+			"annotation": "(pattern)",
+			"details": "The PICO-8 fill pattern is a 4x4 2-colour tiled pattern. <a href='https://www.lexaloffle.com/dl/docs/pico-8_manual.html#FILLP'>Manual</a>"
+		},
+
+
+
+		{
 			"trigger": "abs",
 			"kind": "function",
 			"contents": "abs(${1:x})",
@@ -56,10 +262,6 @@
 		{
 			"trigger": "all",
 			"contents": "all(${1:t})"
-		},
-		{
-			"trigger": "assert",
-			"contents": "assert(${1:condition})"
 		},
 		{
 			"trigger": "atan2",
@@ -90,10 +292,6 @@
 			"contents": "bxor(${1:x},${2:y})"
 		},
 		{
-			"trigger": "camera",
-			"contents": "camera(${1:x},${2:y})"
-		},
-		{
 			"trigger": "cartdata",
 			"contents": "cartdata(${1:id})"
 		},
@@ -106,28 +304,8 @@
 			"contents": "-flr(-${1:x})"
 		},
 		{
-			"trigger": "circ",
-			"contents": "circ(${1:x},${2:y},${3:r},${4:col})"
-		},
-		{
-			"trigger": "circfill",
-			"contents": "circfill(${1:x},${2:y},${3:r},${4:col})"
-		},
-		{
-			"trigger": "clip",
-			"contents": "clip(${1:x},${2:y},${3:w},${4:h})"
-		},
-		{
-			"trigger": "cls",
-			"contents": "cls()"
-		},
-		{
 			"trigger": "cocreate",
 			"contents": "cocreate(${1:f})"
-		},
-		{
-			"trigger": "color",
-			"contents": "color(${1:col})"
 		},
 		{
 			"trigger": "coresume",
@@ -150,10 +328,6 @@
 			"contents": "cstore(${1:dest},${2:src},${3:len},${4:cart})"
 		},
 		{
-			"trigger": "cursor",
-			"contents": "cursor(${1:x},${2:y})"
-		},
-		{
 			"trigger": "del",
 			"contents": "del(${1:t},${2:v})"
 		},
@@ -174,28 +348,12 @@
 			"contents": "export(${1:file})"
 		},
 		{
-			"trigger": "extcmd",
-			"contents": "extcmd(\"${1:cmd}\")"
-		},
-		{
-			"trigger": "fget",
-			"contents": "fget(${1:n},${2:f})"
-		},
-		{
-			"trigger": "flip",
-			"contents": "flip()"
-		},
-		{
 			"trigger": "flr",
 			"contents": "flr(${1:x})"
 		},
 		{
 			"trigger": "foreach",
 			"contents": "foreach(${1:t},${2:f})"
-		},
-		{
-			"trigger": "fset",
-			"contents": "fset(${1:n},${2:f},${3:v})"
 		},
 		{
 			"trigger": "help",
@@ -210,10 +368,6 @@
 			"contents": "import(${1:file}.png)"
 		},
 		{
-			"trigger": "info",
-			"contents": "info()"
-		},
-		{
 			"trigger": "install_demos",
 			"contents": "install_demos()"
 		},
@@ -224,12 +378,6 @@
 		{
 			"trigger": "keyconfig",
 			"contents": "keyconfig()"
-		},
-		{
-			"trigger": "line",
-			"annotation": "(x0, y0 [, x1, y1, col])",
-			"kind": "function",
-			"contents": "line(${1:x0},${2:y0},${3:x1},${4:y1},${5:col})"
 		},
 		{
 			"trigger": "map",
@@ -284,48 +432,12 @@
 			"contents": "pairs(${1:t})"
 		},
 		{
-			"trigger": "pal",
-			"contents": "pal(${1:c0},${2:c1},${3:p})"
-		},
-		{
-			"trigger": "palt",
-			"contents": "palt(${1:col},${2:t})"
-		},
-		{
 			"trigger": "peek",
 			"contents": "peek(${1:addr})"
 		},
 		{
-			"trigger": "pget",
-			"contents": "pget(${1:x},${2:y})"
-		},
-		{
 			"trigger": "poke",
 			"contents": "poke(${1:addr},${2:val})"
-		},
-		{
-			"trigger": "print",
-			"contents": "print(${1:str},${2:x},${3:y},${4:col})"
-		},
-		{
-			"trigger": "printh",
-			"contents": "printh(${1:str},${2:filename},${3:overwrite})"
-		},
-		{
-			"trigger": "pset",
-			"contents": "pset(${1:x},${2:y},${3:col})"
-		},
-		{
-			"trigger": "reboot",
-			"contents": "reboot()"
-		},
-		{
-			"trigger": "rect",
-			"contents": "rect(${1:x0},${2:y0},${3:x1},${4:y1},${5:col})"
-		},
-		{
-			"trigger": "rectfill",
-			"contents": "rectfill(${1:x0},${2:y0},${3:x1},${4:y1},${5:col})"
 		},
 		{
 			"trigger": "reload",
@@ -392,16 +504,8 @@
 			"contents": "sspr(${1:sx},${2:sy},${3:sw},${4:sh},${5:dx},${6:dy},${7:dw},${8:dh},${9:flip_x},${10:flip_y})"
 		},
 		{
-			"trigger": "stat",
-			"contents": "stat(${1:x})"
-		},
-		{
 			"trigger": "sub",
 			"contents": "sub(${1:str},${2:from},${3:to})"
-		},
-		{
-			"trigger": "time",
-			"contents": "time()"
 		},
 		{
 			"trigger": "type",

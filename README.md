@@ -1,17 +1,20 @@
 # PICO-8 - Sublime Text Completion
 
+![](example.png)
+
 **Work In Progress**
 
 PICO-8 plugin for the Sublime Text 4 editor.
 
 Based on https://github.com/Neko250/sublime-PICO-8
 
+
 ## Features
 
 - Full API completion
 - Useful snippets
-- No ugly color scheme
-- No ugly font
+- _No ugly color scheme_
+- _No ugly font_
 
 ## Installation
 
