@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/syntax.html
+name: pico8
+scope: source.p8
+version: 2
+extends: Packages/Lua/Lua.sublime-syntax
+
+file_extensions:
+  - p8
+  - lua
+
+first_line_match: "pico-8 cartridge // http://www.pico-8.com"
+
+contexts:
+  infix-operator:
+    - meta_prepend: true
+
+    - match: \\=|\\|\+=|-=|\*=|\/=|\.\.=
+      scope: keyword.operator.assignment.lua
+
+    - match: \\
+      scope: keyword.operator.arithmetic.lua
