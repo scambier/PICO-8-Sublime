@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 # http://www.sublimetext.com/docs/syntax.html
-name: pico8
+name: PICO-8
 scope: source.p8
 version: 2
 extends: Packages/Lua/Lua.sublime-syntax

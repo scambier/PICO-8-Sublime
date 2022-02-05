@@ -1,0 +1,18 @@
+[
+    {
+        "caption": "PICO-8: Run Cartridge",
+        "command": "pico_run_cart"
+    },
+    {
+        "caption": "PICO-8: Setup PICO-8 Path",
+        "command": "pico_setup_path"
+    },
+    {
+        "caption": "PICO-8: Browse API Reference",
+        "command": "open_url",
+        "args":
+        {
+            "url": "https://www.lexaloffle.com/dl/docs/pico-8_manual.html"
+        }
+    }
+]
