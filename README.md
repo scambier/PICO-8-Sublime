@@ -6,7 +6,7 @@
 
 PICO-8 plugin for the Sublime Text 4 editor.
 
-Based on https://github.com/Neko250/sublime-PICO-8
+<small>Based on https://github.com/Neko250/sublime-PICO-8 and https://github.com/sublimehq/Packages/tree/master/Lua</small>
 
 
 ## Features
