@@ -21,17 +21,52 @@ contexts:
     - meta_append: true
 
     - match: \\=|\\|\+=|-=|\*=|\/=|\.\.= # assignment operator
-      scope: keyword.operator.assignment.lua
+      scope: keyword.operator.assignment.pico8
       push: expression-begin
 
     - match: \\ # integer division
-      scope: keyword.operator.arithmetic.lua
+      scope: keyword.operator.arithmetic.pico8
       push: expression-begin
 
     - match: (?:!=)
-      scope: keyword.operator.comparison.lua
+      scope: keyword.operator.comparison.pico8
       push: expression-begin
 
+  accessor:
+    - meta_append: true
+
+      # should be in another group?
     - match: ^\s*\?
-      scope: entity.name.function.lua
+      scope: keyword.operator.print.pico8
+
+  prefix-operator:
+    - meta_append: true
+
+    - match: \@
+      scope: keyword.operator.peek.pico8
+
+    - match: \$
+      scope: keyword.operator.peek.pico8
+
+    - match: \%
+      scope: keyword.operator.peek.pico8
+
+
+  number:
+    - meta_prepend: true
+
+    - match: (0[Bb])([01]*(?:(\.)[01]*?))
+      scope: meta.number.float.hexadecimal.lua
+      captures:
+        1: constant.numeric.base.lua
+        2: constant.numeric.value.lua
+        3: punctuation.separator.decimal.lua
+      pop: 1
+
+    - match: (0[Bb])([01]+)
+      scope: meta.number.integer.hexadecimal.lua
+      captures:
+        1: constant.numeric.base.lua
+        2: constant.numeric.value.lua
+      pop: 1
 
