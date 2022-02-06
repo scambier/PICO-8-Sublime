@@ -13,11 +13,25 @@ file_extensions:
 first_line_match: "pico-8 cartridge // http://www.pico-8.com"
 
 contexts:
+  # We complete the infix-operator list of Lua
+  # with PICO-8 specifics
+  #
+  # ! Don't forget to push the corresponding scope when required !
   infix-operator:
-    - meta_prepend: true
+    - meta_append: true
 
-    - match: \\=|\\|\+=|-=|\*=|\/=|\.\.=
+    - match: \\=|\\|\+=|-=|\*=|\/=|\.\.= # assignment operator
       scope: keyword.operator.assignment.lua
+      push: expression-begin
 
-    - match: \\
+    - match: \\ # integer division
       scope: keyword.operator.arithmetic.lua
+      push: expression-begin
+
+    - match: (?:!=)
+      scope: keyword.operator.comparison.lua
+      push: expression-begin
+
+    - match: ^\s*\?
+      scope: entity.name.function.lua
+
