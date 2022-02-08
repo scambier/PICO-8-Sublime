@@ -51,7 +51,6 @@ contexts:
     - match: \%
       scope: keyword.operator.peek.pico8
 
-
   number:
     - meta_prepend: true
 
@@ -69,4 +68,10 @@ contexts:
         1: constant.numeric.base.lua
         2: constant.numeric.value.lua
       pop: 1
+
+  prototype:
+    - meta_append: true
+
+    - match: '^#include'
+      scope: meta.function-call.lua support.function.builtin.lua
 
