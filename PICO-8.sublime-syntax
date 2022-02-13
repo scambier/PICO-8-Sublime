@@ -63,10 +63,10 @@ contexts:
       pop: 1
 
     - match: (0[Bb])([01]+)
-      scope: meta.number.integer.hexadecimal.lua
+      scope: meta.number.integer.binary.pico8
       captures:
-        1: constant.numeric.base.lua
-        2: constant.numeric.value.lua
+        1: constant.numeric.base.pico8
+        2: constant.numeric.value.pico8
       pop: 1
 
   prototype:
@@ -74,4 +74,3 @@ contexts:
 
     - match: '^#include'
       scope: meta.function-call.lua support.function.builtin.lua
-
